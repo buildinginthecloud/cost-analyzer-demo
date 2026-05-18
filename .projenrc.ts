@@ -33,7 +33,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
       },
     },
   },
-  buildWorkflow: true,
+  buildWorkflow: false,
+  release: false,
+  depsUpgrade: false,
 });
 
 project.gitignore.exclude('cdk.context.json', 'cdk.out.target/', 'cdk.out.base/');
