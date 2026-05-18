@@ -36,6 +36,8 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   buildWorkflow: true,
 });
 
+project.gitignore.exclude('cdk.context.json');
+
 // Pull request workflow with cost analysis
 const prWorkflow = project.github!.addWorkflow('pull-request');
 

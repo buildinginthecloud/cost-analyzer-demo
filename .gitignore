@@ -49,5 +49,6 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+cdk.context.json
 !/.github/workflows/pull-request.yml
 !/.projenrc.ts
