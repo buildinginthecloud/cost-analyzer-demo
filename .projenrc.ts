@@ -76,7 +76,7 @@ prWorkflow.addJob('cost-analysis', {
     },
     {
       name: 'Install dependencies',
-      run: 'npm ci',
+      run: 'npm install',
     },
     {
       name: 'Configure AWS credentials',
