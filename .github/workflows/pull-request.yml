@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -48,7 +48,10 @@ jobs:
       - name: Checkout PR branch
         run: git checkout -
       - name: Run cost analysis
-        run: npx cdk-cost-analyzer compare cdk.out.base/*.template.json cdk.out.target/*.template.json --region ${{ env.AWS_REGION }} --format markdown > cost-analysis.md 2>&1 || true
+        run: |-
+          npx cdk-cost-analyzer compare cdk.out.base/*.template.json cdk.out.target/*.template.json --region ${{ env.AWS_REGION }} --format markdown > cost-analysis-raw.md 2>&1 || true
+          # Filter out $0.00 added-resource rows for a cleaner comment
+          sed -E '/^\| .* \| `AWS::[^`]+` \| \$0\.00 \|$/d' cost-analysis-raw.md > cost-analysis.md
       - name: Comment PR
         uses: actions/github-script@v7
         with:
