@@ -6,7 +6,9 @@ const config = loadConfig();
 const app = new App();
 
 new HelloWorldStack(app, 'HelloWorldStack', {
-  env: { account: config.account, region: config.region },
+  env: config.account
+    ? { account: config.account, region: config.region }
+    : undefined,
   environment: config.environment,
   description: `Hello World CDK application for ${config.environment}`,
 });
