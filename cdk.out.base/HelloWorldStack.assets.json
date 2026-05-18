@@ -1,0 +1,36 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "3e73ebd887edac3654b7e9da18231ad3bb163eb1d22b7c9c27bed6867ea74794": {
+      "displayName": "HelloWorld/Handler/Code",
+      "source": {
+        "path": "asset.3e73ebd887edac3654b7e9da18231ad3bb163eb1d22b7c9c27bed6867ea74794",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "226714105331-eu-central-1-968076f9": {
+          "bucketName": "cdk-hnb659fds-assets-226714105331-eu-central-1",
+          "objectKey": "3e73ebd887edac3654b7e9da18231ad3bb163eb1d22b7c9c27bed6867ea74794.zip",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::226714105331:role/cdk-hnb659fds-file-publishing-role-226714105331-eu-central-1"
+        }
+      }
+    },
+    "31f8e75f1265f6eb08ea9f3a7530cf7bd4e4296151a46257b3dbcf05bca760fc": {
+      "displayName": "HelloWorldStack Template",
+      "source": {
+        "path": "HelloWorldStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "226714105331-eu-central-1-de52dfce": {
+          "bucketName": "cdk-hnb659fds-assets-226714105331-eu-central-1",
+          "objectKey": "31f8e75f1265f6eb08ea9f3a7530cf7bd4e4296151a46257b3dbcf05bca760fc.json",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::226714105331:role/cdk-hnb659fds-file-publishing-role-226714105331-eu-central-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

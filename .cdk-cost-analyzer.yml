@@ -8,3 +8,21 @@ assumptions:
 thresholds:
   warning: 50
   critical: 200
+exclusions:
+  resourceTypes:
+    - AWS::EC2::Subnet
+    - AWS::EC2::RouteTable
+    - AWS::EC2::SubnetRouteTableAssociation
+    - AWS::EC2::Route
+    - AWS::EC2::EIP
+    - AWS::EC2::InternetGateway
+    - AWS::EC2::VPCGatewayAttachment
+    - AWS::EC2::SecurityGroup
+    - AWS::EC2::SecurityGroupIngress
+    - AWS::RDS::DBSubnetGroup
+    - AWS::RDS::DBInstance
+    - AWS::SecretsManager::Secret
+    - AWS::SecretsManager::SecretTargetAttachment
+    - AWS::IAM::Role
+    - AWS::IAM::Policy
+    - AWS::CDK::Metadata

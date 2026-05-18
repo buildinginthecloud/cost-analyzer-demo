@@ -1,0 +1,1434 @@
+{
+ "Description": "Hello World CDK application for dev",
+ "Resources": {
+  "DatabaseAppVpc3F971AEF": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/Resource"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1Subnet066246AD": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.0.0.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/Subnet"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1RouteTable38A5E57C": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/RouteTable"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1RouteTableAssociation6C48E632": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1RouteTable38A5E57C"
+    },
+    "SubnetId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1Subnet066246AD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/RouteTableAssociation"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1DefaultRoute12AA1409": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "DatabaseAppVpcIGW17B7207E"
+    },
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1RouteTable38A5E57C"
+    }
+   },
+   "DependsOn": [
+    "DatabaseAppVpcVPCGW9DD5E8E9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/DefaultRoute"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1EIP5EFC5896": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/EIP"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet1NATGateway67F8D050": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "DatabaseAppVpcpublicSubnet1EIP5EFC5896",
+      "AllocationId"
+     ]
+    },
+    "SubnetId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1Subnet066246AD"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "DependsOn": [
+    "DatabaseAppVpcpublicSubnet1DefaultRoute12AA1409",
+    "DatabaseAppVpcpublicSubnet1RouteTableAssociation6C48E632"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet1/NATGateway"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet2Subnet0F587F4B": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.0.1.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet2"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet2/Subnet"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet2RouteTable74143658": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/publicSubnet2"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet2/RouteTable"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet2RouteTableAssociation739E015E": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcpublicSubnet2RouteTable74143658"
+    },
+    "SubnetId": {
+     "Ref": "DatabaseAppVpcpublicSubnet2Subnet0F587F4B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet2/RouteTableAssociation"
+   }
+  },
+  "DatabaseAppVpcpublicSubnet2DefaultRoute7D8D95E7": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "DatabaseAppVpcIGW17B7207E"
+    },
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcpublicSubnet2RouteTable74143658"
+    }
+   },
+   "DependsOn": [
+    "DatabaseAppVpcVPCGW9DD5E8E9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/publicSubnet2/DefaultRoute"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet1Subnet22EF870B": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.0.2.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/privateSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet1/Subnet"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet1RouteTableF1C1338D": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/privateSubnet1"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet1/RouteTable"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcprivateSubnet1RouteTableF1C1338D"
+    },
+    "SubnetId": {
+     "Ref": "DatabaseAppVpcprivateSubnet1Subnet22EF870B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet1/RouteTableAssociation"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1NATGateway67F8D050"
+    },
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcprivateSubnet1RouteTableF1C1338D"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet1/DefaultRoute"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet2SubnetA67DBD75": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.0.3.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/privateSubnet2"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet2/Subnet"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet2RouteTableBA96318E": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc/privateSubnet2"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet2/RouteTable"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcprivateSubnet2RouteTableBA96318E"
+    },
+    "SubnetId": {
+     "Ref": "DatabaseAppVpcprivateSubnet2SubnetA67DBD75"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet2/RouteTableAssociation"
+   }
+  },
+  "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "DatabaseAppVpcpublicSubnet1NATGateway67F8D050"
+    },
+    "RouteTableId": {
+     "Ref": "DatabaseAppVpcprivateSubnet2RouteTableBA96318E"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/privateSubnet2/DefaultRoute"
+   }
+  },
+  "DatabaseAppVpcIGW17B7207E": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Name",
+      "Value": "HelloWorldStack/Database/AppVpc"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/IGW"
+   }
+  },
+  "DatabaseAppVpcVPCGW9DD5E8E9": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "InternetGatewayId": {
+     "Ref": "DatabaseAppVpcIGW17B7207E"
+    },
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AppVpc/VPCGW"
+   }
+  },
+  "DatabaseAuroraClusterSubnets2B6839DC": {
+   "Type": "AWS::RDS::DBSubnetGroup",
+   "Properties": {
+    "DBSubnetGroupDescription": "Subnets for AuroraCluster database",
+    "SubnetIds": [
+     {
+      "Ref": "DatabaseAppVpcprivateSubnet1Subnet22EF870B"
+     },
+     {
+      "Ref": "DatabaseAppVpcprivateSubnet2SubnetA67DBD75"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/Subnets/Default"
+   }
+  },
+  "DatabaseAuroraClusterSecurityGroup319288EA": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "RDS security group",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/SecurityGroup/Resource"
+   }
+  },
+  "DatabaseAuroraClusterSecurityGroupfromHelloWorldStackHelloWorldHandlerSecurityGroupCF7A7E0BIndirectPortF4EC0ACF": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "from HelloWorldStackHelloWorldHandlerSecurityGroupCF7A7E0B:{IndirectPort}",
+    "FromPort": {
+     "Fn::GetAtt": [
+      "DatabaseAuroraCluster35AE33F7",
+      "Endpoint.Port"
+     ]
+    },
+    "GroupId": {
+     "Fn::GetAtt": [
+      "DatabaseAuroraClusterSecurityGroup319288EA",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "HelloWorldHandlerSecurityGroup743D02CE",
+      "GroupId"
+     ]
+    },
+    "ToPort": {
+     "Fn::GetAtt": [
+      "DatabaseAuroraCluster35AE33F7",
+      "Endpoint.Port"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/SecurityGroup/from HelloWorldStackHelloWorldHandlerSecurityGroupCF7A7E0B:{IndirectPort}"
+   }
+  },
+  "DatabaseAuroraClusterSecret57715CC7": {
+   "Type": "AWS::SecretsManager::Secret",
+   "Properties": {
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Generated by the CDK for stack: ",
+       {
+        "Ref": "AWS::StackName"
+       }
+      ]
+     ]
+    },
+    "GenerateSecretString": {
+     "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
+     "GenerateStringKey": "password",
+     "PasswordLength": 30,
+     "SecretStringTemplate": "{\"username\":\"postgres\"}"
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/Secret/Resource"
+   }
+  },
+  "DatabaseAuroraClusterSecretAttachment4E843BB8": {
+   "Type": "AWS::SecretsManager::SecretTargetAttachment",
+   "Properties": {
+    "SecretId": {
+     "Ref": "DatabaseAuroraClusterSecret57715CC7"
+    },
+    "TargetId": {
+     "Ref": "DatabaseAuroraCluster35AE33F7"
+    },
+    "TargetType": "AWS::RDS::DBCluster"
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/Secret/Attachment/Resource"
+   }
+  },
+  "DatabaseAuroraCluster35AE33F7": {
+   "Type": "AWS::RDS::DBCluster",
+   "Properties": {
+    "CopyTagsToSnapshot": true,
+    "DBClusterParameterGroupName": "default.aurora-postgresql16",
+    "DBSubnetGroupName": {
+     "Ref": "DatabaseAuroraClusterSubnets2B6839DC"
+    },
+    "Engine": "aurora-postgresql",
+    "EngineVersion": "16.4",
+    "MasterUserPassword": {
+     "Fn::Join": [
+      "",
+      [
+       "{{resolve:secretsmanager:",
+       {
+        "Ref": "DatabaseAuroraClusterSecret57715CC7"
+       },
+       ":SecretString:password::}}"
+      ]
+     ]
+    },
+    "MasterUsername": {
+     "Fn::Join": [
+      "",
+      [
+       "{{resolve:secretsmanager:",
+       {
+        "Ref": "DatabaseAuroraClusterSecret57715CC7"
+       },
+       ":SecretString:username::}}"
+      ]
+     ]
+    },
+    "Port": 5432,
+    "ServerlessV2ScalingConfiguration": {
+     "MaxCapacity": 2,
+     "MinCapacity": 0.5
+    },
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcSecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "DatabaseAuroraClusterSecurityGroup319288EA",
+       "GroupId"
+      ]
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/Resource"
+   }
+  },
+  "DatabaseAuroraClusterwriterE38F2C36": {
+   "Type": "AWS::RDS::DBInstance",
+   "Properties": {
+    "DBClusterIdentifier": {
+     "Ref": "DatabaseAuroraCluster35AE33F7"
+    },
+    "DBInstanceClass": "db.serverless",
+    "Engine": "aurora-postgresql",
+    "PromotionTier": 0,
+    "PubliclyAccessible": false,
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "DependsOn": [
+    "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E",
+    "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4",
+    "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07",
+    "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/Database/AuroraCluster/writer/Resource"
+   }
+  },
+  "HelloWorldHandlerServiceRoleAB92FE19": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "DependsOn": [
+    "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E",
+    "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4",
+    "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07",
+    "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Handler/ServiceRole/Resource"
+   }
+  },
+  "HelloWorldHandlerSecurityGroup743D02CE": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatic security group for Lambda Function HelloWorldStackHelloWorldHandler148021D5",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "VpcId": {
+     "Ref": "DatabaseAppVpc3F971AEF"
+    }
+   },
+   "DependsOn": [
+    "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E",
+    "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4",
+    "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07",
+    "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Handler/SecurityGroup/Resource"
+   }
+  },
+  "HelloWorldHandlerBC60593A": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-226714105331-eu-central-1",
+     "S3Key": "3e73ebd887edac3654b7e9da18231ad3bb163eb1d22b7c9c27bed6867ea74794.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "ENVIRONMENT": "dev",
+      "DB_HOST": {
+       "Fn::GetAtt": [
+        "DatabaseAuroraCluster35AE33F7",
+        "Endpoint.Address"
+       ]
+      },
+      "DB_PORT": {
+       "Fn::GetAtt": [
+        "DatabaseAuroraCluster35AE33F7",
+        "Endpoint.Port"
+       ]
+      }
+     }
+    },
+    "Handler": "index.handler",
+    "MemorySize": 128,
+    "Role": {
+     "Fn::GetAtt": [
+      "HelloWorldHandlerServiceRoleAB92FE19",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ],
+    "Timeout": 10,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      {
+       "Fn::GetAtt": [
+        "HelloWorldHandlerSecurityGroup743D02CE",
+        "GroupId"
+       ]
+      }
+     ],
+     "SubnetIds": [
+      {
+       "Ref": "DatabaseAppVpcprivateSubnet1Subnet22EF870B"
+      },
+      {
+       "Ref": "DatabaseAppVpcprivateSubnet2SubnetA67DBD75"
+      }
+     ]
+    }
+   },
+   "DependsOn": [
+    "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E",
+    "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4",
+    "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07",
+    "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB",
+    "HelloWorldHandlerServiceRoleAB92FE19"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Handler/Resource",
+    "aws:asset:path": "asset.3e73ebd887edac3654b7e9da18231ad3bb163eb1d22b7c9c27bed6867ea74794",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "HelloWorldApi5A7A824D": {
+   "Type": "AWS::ApiGateway::RestApi",
+   "Properties": {
+    "Description": "Hello World API",
+    "Name": "hello-world-dev",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Resource"
+   }
+  },
+  "HelloWorldApiCloudWatchRole6A8CCAE3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "apigateway.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/CloudWatchRole/Resource"
+   }
+  },
+  "HelloWorldApiAccount4CC3848B": {
+   "Type": "AWS::ApiGateway::Account",
+   "Properties": {
+    "CloudWatchRoleArn": {
+     "Fn::GetAtt": [
+      "HelloWorldApiCloudWatchRole6A8CCAE3",
+      "Arn"
+     ]
+    }
+   },
+   "DependsOn": [
+    "HelloWorldApi5A7A824D"
+   ],
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Account"
+   }
+  },
+  "HelloWorldApiDeployment4BDE915Fc7eb100efc744142ae4f71a1d32d16d3": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "Description": "Hello World API",
+    "RestApiId": {
+     "Ref": "HelloWorldApi5A7A824D"
+    }
+   },
+   "DependsOn": [
+    "HelloWorldApiGETEB86B742"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Deployment/Resource",
+    "aws:cdk:do-not-refactor": true
+   }
+  },
+  "HelloWorldApiDeploymentStagedev6F2C6BC0": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "DeploymentId": {
+     "Ref": "HelloWorldApiDeployment4BDE915Fc7eb100efc744142ae4f71a1d32d16d3"
+    },
+    "MethodSettings": [
+     {
+      "DataTraceEnabled": false,
+      "HttpMethod": "*",
+      "LoggingLevel": "INFO",
+      "ResourcePath": "/*"
+     }
+    ],
+    "RestApiId": {
+     "Ref": "HelloWorldApi5A7A824D"
+    },
+    "StageName": "dev",
+    "Tags": [
+     {
+      "Key": "Application",
+      "Value": "HelloWorld"
+     },
+     {
+      "Key": "Environment",
+      "Value": "dev"
+     },
+     {
+      "Key": "ManagedBy",
+      "Value": "CDK"
+     },
+     {
+      "Key": "Project",
+      "Value": "cost-analyzer-demo"
+     }
+    ]
+   },
+   "DependsOn": [
+    "HelloWorldApiAccount4CC3848B"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/DeploymentStage.dev/Resource"
+   }
+  },
+  "HelloWorldApiGETApiPermissionHelloWorldStackHelloWorldApi964D2308GETA9A77440": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "HelloWorldHandlerBC60593A",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:eu-central-1:226714105331:",
+       {
+        "Ref": "HelloWorldApi5A7A824D"
+       },
+       "/",
+       {
+        "Ref": "HelloWorldApiDeploymentStagedev6F2C6BC0"
+       },
+       "/GET/"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Default/GET/ApiPermission.HelloWorldStackHelloWorldApi964D2308.GET.."
+   }
+  },
+  "HelloWorldApiGETApiPermissionTestHelloWorldStackHelloWorldApi964D2308GET17F20803": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "HelloWorldHandlerBC60593A",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:eu-central-1:226714105331:",
+       {
+        "Ref": "HelloWorldApi5A7A824D"
+       },
+       "/test-invoke-stage/GET/"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Default/GET/ApiPermission.Test.HelloWorldStackHelloWorldApi964D2308.GET.."
+   }
+  },
+  "HelloWorldApiGETEB86B742": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:eu-central-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "HelloWorldHandlerBC60593A",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "HelloWorldApi5A7A824D",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "HelloWorldApi5A7A824D"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/HelloWorld/Api/Default/GET/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31STW/bMAz9LbsrWpG2uztJV+TQzkiKXgNa5hwltmSIUovA8H8fJTV2sENPfPx6fCS4lMvHB3n3Az5poerzotWVHPYe1Flw6DCgWsrhvVdi/de8l2tRhqrVah8qgz7GZrSzweMbVC3O8TlWEFmlwWtrpuIInrZlNK/gn8HjJ1xE6fQHw5l4azw6xteCrOTLKzxrPXZovNijCk77y7OzoU8avg1sTeOQaBSuJjlswEMFhOs2EI8TefzUuVndBq7FzOeyxs3q2picrSEPRuEoKJVQBwYadHLIKmJXNm/gGvQ3W0wF/2dG0UJX1XAwtsYTyddkfgej0lE1dHLY2Xz9aHn2/QGIeLosomFfroI6o1+x9i+2pGgiYVyi6zQRe6OAXjf5zEyN5IteJ/YZFkrZwKo32Lf2cl3gxuNXavJDJMCtNjiFScEL+qOtYzKjcZzyIimOPdo0seJP8H3gG8Tl5Yl+fix/yTv+2xNpvXAsQXcod9n+A/YxjWLUAgAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "HelloWorldStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "HelloWorldApiEndpointC7241BC0": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "HelloWorldApi5A7A824D"
+      },
+      ".execute-api.eu-central-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "HelloWorldApiDeploymentStagedev6F2C6BC0"
+      },
+      "/"
+     ]
+    ]
+   }
+  },
+  "ApiEndpointUrl": {
+   "Description": "API Gateway endpoint URL",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "HelloWorldApi5A7A824D"
+      },
+      ".execute-api.eu-central-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "HelloWorldApiDeploymentStagedev6F2C6BC0"
+      },
+      "/"
+     ]
+    ]
+   }
+  },
+  "DatabaseEndpoint": {
+   "Description": "Aurora cluster endpoint",
+   "Value": {
+    "Fn::GetAtt": [
+     "DatabaseAuroraCluster35AE33F7",
+     "Endpoint.Address"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

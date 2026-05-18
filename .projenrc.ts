@@ -113,7 +113,11 @@ prWorkflow.addJob('cost-analysis', {
     },
     {
       name: 'Run cost analysis',
-      run: 'npx cdk-cost-analyzer compare cdk.out.base/*.template.json cdk.out.target/*.template.json --region ${{ env.AWS_REGION }} --format markdown > cost-analysis.md 2>&1 || true',
+      run: [
+        'npx cdk-cost-analyzer compare cdk.out.base/*.template.json cdk.out.target/*.template.json --region ${{ env.AWS_REGION }} --format markdown > cost-analysis-raw.md 2>&1 || true',
+        '# Filter out $0.00 added-resource rows for a cleaner comment',
+        "sed -E '/^\\| .* \\| `AWS::[^`]+` \\| \\$0\\.00 \\|$/d' cost-analysis-raw.md > cost-analysis.md",
+      ].join('\n'),
     },
     {
       name: 'Comment PR',

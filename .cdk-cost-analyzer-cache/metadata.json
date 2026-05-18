@@ -1,0 +1,20 @@
+{
+  "entries": {
+    "AmazonEC2:EU (Frankfurt):productFamily:NAT Gateway|usagetype:EUC1-RegionalNatGateway-Hours": {
+      "price": 0.052,
+      "timestamp": 1779099051018
+    },
+    "AmazonEC2:EU (Frankfurt):productFamily:NAT Gateway|usagetype:EUC1-RegionalNatGateway-Bytes": {
+      "price": 0.052,
+      "timestamp": 1779099051202
+    },
+    "AWSLambda:EU (Frankfurt):group:AWS-Lambda-Requests": {
+      "price": 2.1e-7,
+      "timestamp": 1779099051400
+    },
+    "AWSLambda:EU (Frankfurt):group:AWS-Lambda-Duration": {
+      "price": 0.0000166667,
+      "timestamp": 1779099051575
+    }
+  }
+}

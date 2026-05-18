@@ -1,0 +1,770 @@
+{
+  "/HelloWorldStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    },
+    {
+      "type": "aws:cdk:stack-tags",
+      "data": [
+        {
+          "key": "Application",
+          "value": "HelloWorld"
+        },
+        {
+          "key": "Environment",
+          "value": "dev"
+        },
+        {
+          "key": "ManagedBy",
+          "value": "CDK"
+        },
+        {
+          "key": "Project",
+          "value": "cost-analyzer-demo"
+        }
+      ]
+    }
+  ],
+  "/HelloWorldStack/ApiEndpointUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ApiEndpointUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:24:5)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/DatabaseEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:29:5)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...App.synth in aws-cdk-lib...",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:17:5)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...App.synth in aws-cdk-lib...",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:17:5)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...App.synth in aws-cdk-lib...",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:17:5)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpc3F971AEF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcIGW17B7207E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcVPCGW9DD5E8E9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraCluster35AE33F7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Handler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldHandlerBC60593A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:24:21)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApi5A7A824D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Account": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiAccount4CC3848B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Endpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiEndpointC7241BC0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1Subnet066246AD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1RouteTable38A5E57C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1RouteTableAssociation6C48E632"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1DefaultRoute12AA1409"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1EIP5EFC5896"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet1/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet1NATGateway67F8D050"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet2Subnet0F587F4B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet2RouteTable74143658"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet2RouteTableAssociation739E015E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/publicSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcpublicSubnet2DefaultRoute7D8D95E7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet1Subnet22EF870B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet1RouteTableF1C1338D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet1RouteTableAssociationE4F51FB4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet1DefaultRoute0BF4C82E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet2SubnetA67DBD75"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet2RouteTableBA96318E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet2RouteTableAssociation0AC426EB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/yvthepief/Code/cost-analyzer-demo-v2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AppVpc/privateSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAppVpcprivateSubnet2DefaultRoute1B7F7C07"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:22:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/Subnets/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterSubnets2B6839DC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterSecurityGroup319288EA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/SecurityGroup/from HelloWorldStackHelloWorldHandlerSecurityGroupCF7A7E0B:{IndirectPort}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterSecurityGroupfromHelloWorldStackHelloWorldHandlerSecurityGroupCF7A7E0BIndirectPortF4EC0ACF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...Connections.allowDefaultPortFrom in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:40:34)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/Secret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterSecret57715CC7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/writer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterwriterE38F2C36"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Handler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldHandlerServiceRoleAB92FE19"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:24:21)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Handler/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldHandlerSecurityGroup743D02CE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:24:21)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/CloudWatchRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiCloudWatchRole6A8CCAE3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Deployment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiDeployment4BDE915Fc7eb100efc744142ae4f71a1d32d16d3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/DeploymentStage.dev/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiDeploymentStagedev6F2C6BC0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:43:16)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/Database/AuroraCluster/Secret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseAuroraClusterSecretAttachment4E843BB8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new DatabaseConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/DatabaseConstruct.ts:32:20)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:14:22)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Default/GET/ApiPermission.HelloWorldStackHelloWorldApi964D2308.GET..": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiGETApiPermissionHelloWorldStackHelloWorldApi964D2308GETA9A77440"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:52:19)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Default/GET/ApiPermission.Test.HelloWorldStackHelloWorldApi964D2308.GET..": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiGETApiPermissionTestHelloWorldStackHelloWorldApi964D2308GET17F20803"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:52:19)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/HelloWorldStack/HelloWorld/Api/Default/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HelloWorldApiGETEB86B742"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new HelloWorldConstruct (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/constructs/HelloWorldConstruct.ts:52:19)",
+        "new HelloWorldStack (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/stacks/HelloWorldStack.ts:18:24)",
+        "<anonymous> (/Users/yvthepief/Code/cost-analyzer-demo-v2/src/Main.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ]
+}
