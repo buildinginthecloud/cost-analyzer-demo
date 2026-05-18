@@ -1,0 +1,10 @@
+region: eu-central-1
+assumptions:
+  lambda:
+    invocationsPerMonth: 1000000
+    averageDurationMs: 100
+  apiGateway:
+    requestsPerMonth: 1000000
+thresholds:
+  warning: 50
+  critical: 200
